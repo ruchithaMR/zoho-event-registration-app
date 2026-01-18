@@ -1,0 +1,6 @@
+existing = Registration[Select_Event == input.Select_Event && Select_Employee == input.Select_Employee];
+
+if(existing.count() > 1)
+{
+    delete from Registration[ID == input.ID];
+}
