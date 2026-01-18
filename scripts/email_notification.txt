@@ -1,0 +1,16 @@
+if(input.Approval_Status == "Approved")
+{
+    eventRec = Event_List[ID == input.Select_Event];
+    empRec = Employee_Directory[ID == input.Select_Employee];
+
+    sendmail
+    [
+        from : zoho.adminuserid
+        to : empRec.Employee_Email
+        subject : "Registration Confirmed"
+        message : "Hello " + empRec.Employee_Name + ",\n\n" +
+                  "Your registration for the event: " + eventRec.Event_Name +
+                  " on " + eventRec.Event_Date +
+                  " has been confirmed.\n\nThank you."
+    ];
+}
