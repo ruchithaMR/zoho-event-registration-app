@@ -1,0 +1,8 @@
+approvedCount = Registration[Select_Event == input.Select_Event && Approval_Status == "Approved"].count();
+
+eventRecord = Event_List[ID == input.Select_Event];
+
+if(approvedCount >= eventRecord.Maximum_Participants)
+{
+    eventRecord.Event_Status = "Closed";
+}
