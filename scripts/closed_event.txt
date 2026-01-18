@@ -1,0 +1,6 @@
+eventRecord = Event_List[ID == input.Select_Event];
+
+if(eventRecord.Event_Status == "Closed")
+{
+    delete from Registration[ID == input.ID];
+}
